@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/clientes")
 @CrossOrigin("http://localhost:4200")
@@ -50,6 +52,12 @@ public class ClienteController {
             return cliente;
 
         }).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Cliente não encontrado no DB"));
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Cliente> getAll(){
+       return clienteRepository.findAll();
     }
 
 
