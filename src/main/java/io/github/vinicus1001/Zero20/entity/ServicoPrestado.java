@@ -1,38 +1,43 @@
 package io.github.vinicus1001.Zero20.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "SERVICO")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Servico {
+public class ServicoPrestado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name = "id")
     private Integer id;
 
-    @Column(name = "descricao", nullable = false, length = 250)
-    @NotEmpty
+    @Column(nullable = false, length = 150)
     private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
-    @Column(name = "valor")
-    @NotBlank
+    @Column
     private BigDecimal valor;
+
+    @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate data;
+
 
 
 }
