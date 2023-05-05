@@ -27,6 +27,7 @@ public class ServicoPrestadoController {
     private final BigDecimalConverter bIgconvert ;
 
 
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ServicoPrestado salvar(@RequestBody @Valid ServicoPrestadoDTO servicoPrestadoDTO){
@@ -49,6 +50,6 @@ public class ServicoPrestadoController {
 
     @GetMapping
     public List<ServicoPrestado> buscar(@RequestParam(value = "nome", required = false, defaultValue = "") String nome, @RequestParam(value = "mes" , required = false)  Integer mes){
-        return servicoPrestadoRepository.findByNomeClienteAndMes( "%" + nome + "%" , mes);
+        return servicoPrestadoRepository.findByNomeClienteAdnMes( "%" + nome + "%" , mes);
     }
 }

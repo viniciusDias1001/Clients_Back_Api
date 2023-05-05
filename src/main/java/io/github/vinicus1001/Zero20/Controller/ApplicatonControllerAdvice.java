@@ -24,8 +24,8 @@ public class ApplicatonControllerAdvice {
       List<String> messagens =  bindingResult.getAllErrors().stream().map(objectError -> objectError.getDefaultMessage()).collect(Collectors.toList());
         return new ApiErros(messagens);
 
-
     }
+
 
     @ExceptionHandler(ResponseStatusException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)

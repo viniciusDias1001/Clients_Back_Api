@@ -1,6 +1,7 @@
 package io.github.vinicus1001.Zero20.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,7 @@ public class Cliente {
     private String cpf;
 
     @Column(name = "data",nullable = false, updatable = false)
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
 

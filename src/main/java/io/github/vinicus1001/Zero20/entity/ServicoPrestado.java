@@ -25,6 +25,7 @@ public class ServicoPrestado {
     private Integer id;
 
     @Column(nullable = false, length = 150)
+    @NotEmpty(message = "A descrição não pode ser nula")
     private String descricao;
 
     @ManyToOne
@@ -32,11 +33,16 @@ public class ServicoPrestado {
     private Cliente cliente;
 
     @Column
+    @NotNull(message = "O valor não pode ser nulo")
     private BigDecimal valor;
 
     @Column
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @NotNull(message = "A data não pode ser nula")
     private LocalDate data;
+
+
+
 
 
 
