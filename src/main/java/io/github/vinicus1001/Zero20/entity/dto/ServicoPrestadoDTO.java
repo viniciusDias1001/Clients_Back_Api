@@ -1,4 +1,4 @@
-package io.github.vinicus1001.Zero20.dto;
+package io.github.vinicus1001.Zero20.entity.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

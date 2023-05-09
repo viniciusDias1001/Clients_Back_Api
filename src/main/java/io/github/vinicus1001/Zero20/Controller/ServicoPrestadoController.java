@@ -2,7 +2,7 @@ package io.github.vinicus1001.Zero20.Controller;
 
 
 import io.github.vinicus1001.Zero20.Util.BigDecimalConverter;
-import io.github.vinicus1001.Zero20.dto.ServicoPrestadoDTO;
+import io.github.vinicus1001.Zero20.entity.dto.ServicoPrestadoDTO;
 import io.github.vinicus1001.Zero20.entity.Cliente;
 import io.github.vinicus1001.Zero20.entity.ServicoPrestado;
 import io.github.vinicus1001.Zero20.repository.ClienteRepository;
