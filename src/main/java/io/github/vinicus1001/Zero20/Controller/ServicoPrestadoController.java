@@ -7,12 +7,12 @@ import io.github.vinicus1001.Zero20.entity.Cliente;
 import io.github.vinicus1001.Zero20.entity.ServicoPrestado;
 import io.github.vinicus1001.Zero20.repository.ClienteRepository;
 import io.github.vinicus1001.Zero20.repository.ServicoPrestadoRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;

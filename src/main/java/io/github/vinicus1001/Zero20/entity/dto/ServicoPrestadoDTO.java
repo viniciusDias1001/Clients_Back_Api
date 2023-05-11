@@ -1,10 +1,11 @@
 package io.github.vinicus1001.Zero20.entity.dto;
 
-import jakarta.validation.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
 import java.text.NumberFormat;
 import java.util.Locale;
 

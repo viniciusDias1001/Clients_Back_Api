@@ -3,12 +3,12 @@ package io.github.vinicus1001.Zero20.Controller;
 
 import io.github.vinicus1001.Zero20.entity.Cliente;
 import io.github.vinicus1001.Zero20.repository.ClienteRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
