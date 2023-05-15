@@ -1,6 +1,10 @@
 package io.github.vinicus1001.Zero20.config;
 
 
+import io.github.vinicus1001.Zero20.service.UsuarioService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,10 +17,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    UsuarioService usuarioService;
+
+
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("pedro").password("200622pmr").roles("USER");
+       auth.userDetailsService(usuarioService).passwordEncoder(passwordEncoder());
     }
 
     @Bean

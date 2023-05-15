@@ -21,16 +21,14 @@ public class Usuario {
     @Setter
     private Integer id;
 
-    @Column(name = "login")
-    @NotEmpty(message = "O campo UserName não pode ser vazio ")
-    @NotNull
+    @Column(unique = true, name = "login")
+    @NotEmpty(message = "O campo Login não pode ser vazio ")
     @Getter
     @Setter
     private String username;
 
     @Column(name = "senha")
     @NotEmpty(message = "o campo senha não pode ser vazio")
-    @NotNull
     @Getter
     private String senha;
 }

@@ -30,7 +30,7 @@ public class ApplicatonControllerAdvice {
     @ExceptionHandler(ResponseStatusException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ApiErros handlevalidationErros(ResponseStatusException exception){
-        String menssagem = exception.getMessage();
+        String menssagem = exception.getReason();
         return new ApiErros(menssagem);
 
     }
